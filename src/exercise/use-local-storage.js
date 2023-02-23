@@ -20,8 +20,8 @@ export const useLocalStorage = (
   const [state, setState] = React.useState(() => {
     const valueInLocalStorage = window.localStorage.getItem(key)
     if (valueInLocalStorage) {
-      // the try/catch is here in case the localStorage value was set before
-      // we had the serialization in place (like we do in previous extra credits)
+      // the try/catch is here in case the localStorage value 
+      // was set before we had the serialization in place (like we do in previous extra credits)
       try {
         return deserialize(valueInLocalStorage)
       } catch (error) {
@@ -31,6 +31,7 @@ export const useLocalStorage = (
     return typeof defaultValue === 'function' ? defaultValue() : defaultValue
   })
 
+  // TODO AUGUSTO
   const prevKeyRef = React.useRef(key)
 
   React.useEffect(() => {
