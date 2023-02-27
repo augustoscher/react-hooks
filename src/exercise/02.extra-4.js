@@ -2,6 +2,8 @@ import * as React from 'react'
 import { useLocalStorage } from './use-local-storage'
 
 function Greeting({initialName = ''}) {
+  // const [name, setName] = React.useState(initialName)
+  // we kept the same way to call React.useState:
   const [name, setName] = useLocalStorage('name', initialName)
 
   function handleChange(event) {
