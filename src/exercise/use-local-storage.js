@@ -31,7 +31,8 @@ export const useLocalStorage = (
     return typeof defaultValue === 'function' ? defaultValue() : defaultValue
   })
 
-  // TODO AUGUSTO
+  // used to change the key in local storage when key changes
+  // keep track of previous value.
   const prevKeyRef = React.useRef(key)
 
   React.useEffect(() => {
