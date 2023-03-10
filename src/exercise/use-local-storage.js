@@ -17,6 +17,9 @@ export const useLocalStorage = (
   defaultValue = '',
   { serialize = JSON.stringify, deserialize = JSON.parse } = {},
 ) => {
+  // Passing a function means that we're lazy initalizing the state.
+  // Keeping in mind that local storage is IO, and dont want to do it in every render.
+  // So passing a function to useState will drive react to call it just when initial value is required (first render)
   const [state, setState] = React.useState(() => {
     const valueInLocalStorage = window.localStorage.getItem(key)
     if (valueInLocalStorage) {
