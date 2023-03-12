@@ -4,7 +4,7 @@
 import * as React from 'react'
 
 function Board() {
-  const [squares, setSquares] = React.useState(() => Array(9).fill(null)) 
+  const [squares, setSquares] = React.useState(restart()) 
 
   // 🐨 We'll need the following bits of derived state:
   // - nextValue ('X' or 'O')
@@ -33,8 +33,7 @@ function Board() {
   }
 
   function restart() {
-    // 🐨 reset the squares
-    // 💰 `Array(9).fill(null)` will do it!
+    return Array(9).fill(null)
   }
 
   function renderSquare(i) {
